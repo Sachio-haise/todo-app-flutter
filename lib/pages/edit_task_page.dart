@@ -46,7 +46,7 @@ class _EditTaskPageState extends State<EditTaskPage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('New Task'),
+        title: const Text('Update Task'),
         centerTitle: true,
       ),
       body: SingleChildScrollView(
