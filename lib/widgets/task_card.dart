@@ -71,7 +71,8 @@ class TaskCard extends StatelessWidget {
                           ),
                         ],
                       ),
-                    Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                    Row(mainAxisAlignment: !todo.isDone ? MainAxisAlignment.start : MainAxisAlignment.center
+                        , children: [
                       SizedBox(
                         width: !todo.isDone ? 140.0 : 320.0,
                         height: 32.0,
@@ -79,6 +80,7 @@ class TaskCard extends StatelessWidget {
                           todo.title,
                           overflow: TextOverflow.ellipsis,
                           maxLines: 1,
+                          textAlign: !todo.isDone ? TextAlign.left : TextAlign.center,
                           style: const TextStyle(
                             fontSize: 20,
                             color: Colors.orange,

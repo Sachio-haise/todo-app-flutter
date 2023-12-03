@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:todo_app/data/todo_model.dart';
 import '../config/todo_list.dart';
+import 'package:todo_app/config/todo_list.dart';
 
 class EditTaskPage extends StatefulWidget {
   const EditTaskPage({super.key});
@@ -20,17 +21,17 @@ class _EditTaskPageState extends State<EditTaskPage> {
   final _descriptionController = TextEditingController();
   late final _cardId;
   final List<String> days = [
-    "Sunday",
     "Monday",
     "Tuesday",
     "Wednesday",
     "Thursday",
     "Friday",
-    "Saturday"
+    "Saturday",
+    "Sunday",
   ];
 
   String weekDayToDay(int index) {
-    return days[index];
+    return days[index - 1];
   }
 
   Map data = {};
@@ -46,7 +47,9 @@ class _EditTaskPageState extends State<EditTaskPage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Update Task'),
+        title: const Text('Update Task',
+            style:
+                TextStyle(color: Colors.orange, fontWeight: FontWeight.bold)),
         centerTitle: true,
       ),
       body: SingleChildScrollView(

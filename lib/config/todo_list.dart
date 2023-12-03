@@ -1,7 +1,14 @@
 import '../data/todo_model.dart';
 
 class TodoList {
-  static final List<TodoModel> _todos = [];
+  static final List<TodoModel> _todos = [
+    TodoModel(
+        "1",
+        "Welcome !",
+        "Crud Feature and additional restore feature with awesome design and theme color!",
+        "2/12/2023",
+        "18:00")
+  ];
 
   static List<TodoModel> get todos => _todos;
 

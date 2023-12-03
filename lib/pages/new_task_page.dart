@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todo_app/config/todo_list.dart';
 import 'package:todo_app/data/todo_model.dart';
 
 class NewTaskPage extends StatefulWidget {
@@ -15,30 +16,26 @@ class _NewTaskPageState extends State<NewTaskPage> {
   final _titleController = TextEditingController();
   final _descriptionController = TextEditingController();
   final List<String> days = [
-    "Sunday",
     "Monday",
     "Tuesday",
     "Wednesday",
     "Thursday",
     "Friday",
-    "Saturday"
+    "Saturday",
+    "Sunday",
   ];
 
   String weekDayToDay(int index) {
-    return days[index];
+    return days[index - 1];
   }
-
-//  @override
-//  void initState(){
-//    _titleController.text = "helo again";
-//    _descriptionController.text = "asign ";
-//  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('New Task'),
+        title: const Text('New Task',
+            style:
+                TextStyle(color: Colors.orange, fontWeight: FontWeight.bold)),
         centerTitle: true,
       ),
       body: SingleChildScrollView(
